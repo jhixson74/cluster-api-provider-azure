@@ -1609,7 +1609,7 @@ func TestMachineScope_GetVMImage(t *testing.T) {
 				ClusterScoper: clusterMock,
 			},
 			want: func() *infrav1.Image {
-				image, _ := svc.GetDefaultWindowsImage(t.Context(), "", "1.20.1", "containerd", "")
+				image, _ := svc.GetDefaultWindowsImage(t.Context(), "", "1.20.1", "containerd", "", "")
 				return image
 			}(),
 			expectedErr: "",
@@ -1641,7 +1641,7 @@ func TestMachineScope_GetVMImage(t *testing.T) {
 				ClusterScoper: clusterMock,
 			},
 			want: func() *infrav1.Image {
-				image, _ := svc.GetDefaultWindowsImage(t.Context(), "", "1.22.1", "dockershim", "")
+				image, _ := svc.GetDefaultWindowsImage(t.Context(), "", "1.22.1", "dockershim", "", "")
 				return image
 			}(),
 			expectedErr: "unsupported runtime dockershim",
@@ -1673,7 +1673,7 @@ func TestMachineScope_GetVMImage(t *testing.T) {
 				ClusterScoper: clusterMock,
 			},
 			want: func() *infrav1.Image {
-				image, _ := svc.GetDefaultWindowsImage(t.Context(), "", "1.23.3", "", "windows-2019")
+				image, _ := svc.GetDefaultWindowsImage(t.Context(), "", "1.23.3", "", "windows-2019", "")
 				return image
 			}(),
 			expectedErr: "",
@@ -1705,7 +1705,7 @@ func TestMachineScope_GetVMImage(t *testing.T) {
 				ClusterScoper: clusterMock,
 			},
 			want: func() *infrav1.Image {
-				image, _ := svc.GetDefaultWindowsImage(t.Context(), "", "1.23.3", "", "windows-2022")
+				image, _ := svc.GetDefaultWindowsImage(t.Context(), "", "1.23.3", "", "windows-2022", "")
 				return image
 			}(),
 			expectedErr: "",
@@ -1729,7 +1729,7 @@ func TestMachineScope_GetVMImage(t *testing.T) {
 				ClusterScoper: clusterMock,
 			},
 			want: func() *infrav1.Image {
-				image, _ := svc.GetDefaultLinuxImage(t.Context(), "", "1.20.1")
+				image, _ := svc.GetDefaultLinuxImage(t.Context(), "", "1.20.1", "")
 				return image
 			}(),
 			expectedErr: "",
